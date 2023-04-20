@@ -1,4 +1,15 @@
 import sqlite3
+import pygame 
+from pygame import mixer
+
+pygame.init()
+
+#Die Musik des Spieles
+music = pygame.mixer.music.load('bad.wav')
+pygame.mixer.music.play(-1,0.0)
+pygame.mixer.music.set_volume(.2)
+
+
 
 # Verbindung zur Datenbank herstellen
 conn = sqlite3.connect('datenbank.db')
