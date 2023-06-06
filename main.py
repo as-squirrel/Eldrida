@@ -70,6 +70,140 @@ def inventar_suchen(benutzer_id, name):
         print("Inventar nicht gefunden!")
 
 # Spiel-Loop
+def errate_hauptstadt(land, hauptstadt):
+    print("Errate die Hauptstadt!")
+    print("Land:", land)
+
+    eingabe = input("Deine Antwort: ")
+
+    if eingabe.lower() == hauptstadt.lower():
+        print("Richtig! Das ist die Hauptstadt von", land)
+    else:
+        print("Falsch! Die richtige Hauptstadt von", land, "ist", hauptstadt)
+
+def errate_kontinent(land, kontinent):
+    print("Errate den Kontinent!")
+    print("Land:", land)
+
+    eingabe = input("Deine Antwort: ")
+
+    if eingabe.lower() == kontinent.lower():
+        print("Richtig! Das Land", land, "befindet sich auf dem Kontinent", kontinent)
+    else:
+        print("Falsch! Das Land", land, "befindet sich auf dem Kontinent", kontinent)
+
+def errate_hoechste_erhebung(land, hoechste_erhebung):
+    print("Errate die höchste Erhebung!")
+    print("Land:", land)
+
+    eingabe = input("Deine Antwort: ")
+
+    if eingabe.lower() == hoechste_erhebung.lower():
+        print("Richtig! Die höchste Erhebung von", land, "ist", hoechste_erhebung)
+    else:
+        print("Falsch! Die höchste Erhebung von", land, "ist", hoechste_erhebung)
+
+def errate_laengster_fluss(land, laengster_fluss):
+    print("Errate den längsten Fluss!")
+    print("Land:", land)
+
+    eingabe = input("Deine Antwort: ")
+
+    if eingabe.lower() == laengster_fluss.lower():
+        print("Richtig! Der längste Fluss von", land, "ist", laengster_fluss)
+    else:
+        print("Falsch! Der längste Fluss von", land, "ist", laengster_fluss)
+
+def errate_bundesland(land, bundesland):
+    print("Errate das Bundesland!")
+    print("Land:", land)
+
+    eingabe = input("Deine Antwort: ")
+
+    if eingabe.lower() == bundesland.lower():
+        print("Richtig! Das Land", land, "hat das Bundesland", bundesland)
+    else:
+        print("Falsch! Das Land", land, "hat das Bundesland", bundesland)
+
+
+
+# Beispiel-Daten
+hauptstaedte = {
+    "Deutschland": "Berlin",
+    "Frankreich": "Paris",
+    "Spanien": "Madrid",
+    "Italien": "Rom",
+    "Kanada": "Ottawa",
+    "Australien": "Canberra",
+    "Südafrika": "Pretoria",
+    "Indonesien": "Jakarta",
+    "Estland": "Tallinn",
+    "Uruguay": "Montevideo",
+    "Bangladesch": "Dhaka",
+    "Kirgisistan": "Bischkek"
+}
+
+kontinente = {
+    "Deutschland": "Europa",
+    "Frankreich": "Europa",
+    "Spanien": "Europa",
+    "Italien": "Europa",
+    "Kanada": "Nordamerika",
+    "Australien": "Australien",
+    "Südafrika": "Afrika",
+    "Indonesien": "Asien",
+    "Estland": "Europa",
+    "Uruguay": "Südamerika",
+    "Bangladesch": "Asien",
+    "Kirgisistan": "Asien"
+}
+
+hoechste_erhebungen = {
+    "Deutschland": "Zugspitze",
+    "Frankreich": "Mont Blanc",
+    "Spanien": "Teide",
+    "Italien": "Monte Bianco",
+    "Kanada": "Mount Logan",
+    "Australien": "Mount Kosciuszko",
+    "Südafrika": "Tafelberg",
+    "Indonesien": "Puncak Jaya",
+    "Estland": "Suur Munamägi",
+    "Uruguay": "Cerro Catedral",
+    "Bangladesch": "Keokradong",
+    "Kirgisistan": "Pik Pobedy"
+}
+
+laengste_fluesse = {
+    "Deutschland": "Rhein",
+    "Frankreich": "Seine",
+    "Spanien": "Ebro",
+    "Italien": "Po",
+    "Kanada": "Mackenzie River",
+    "Australien": "Murray River",
+    "Südafrika": "Orange River",
+    "Indonesien": "Kapuas River",
+    "Estland": "Pärnu River",
+    "Uruguay": "Uruguay River",
+    "Bangladesch": "Jamuna River",
+    "Kirgisistan": "Naryn River"
+}
+
+bundeslaender = {
+    "Deutschland": "Bayern",
+    "Frankreich": "Île-de-France",
+    "Spanien": "Madrid",
+    "Italien": "Latium",
+    "Kanada": "Ontario",
+    "Australien": "New South Wales",
+    "Südafrika": "Gauteng",
+    "Indonesien": "Java",
+    "Estland": "Harju",
+    "Uruguay": "Montevideo",
+    "Bangladesch": "Dhaka",
+    "Kirgisistan": "Tschüi"
+}
+
+
 eingeloggt = False
 while True:
     # Hauptmenü anzeigen
