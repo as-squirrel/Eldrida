@@ -118,8 +118,15 @@ while True:
                 print("Dein Inventar:")
                 for item in inventar:
                     print(item[2], "x", item[3])
+
+                    print("")
+                    print("")
+                    print(">---------------------------------------<")
             else:
                 print("Dein Inventar ist leer.")
+                print("")
+                print("")
+                print(">---------------------------------------<")
 
         elif auswahl == "2":
             # Abenteuer beginnen
@@ -162,10 +169,6 @@ while True:
             auswahl = input("Auswahl: ")
 
             if auswahl == "1":
-
-
-            elif auswahl == "2":
-            if auswahl == "1":
                 # Kämpfen
                 print("Der Ork verpasst dir einen Hieb mit seiner Keule und du stirbst...")
                 print("Game Over!")
@@ -175,20 +178,81 @@ while True:
                 # Fliehen
                 print("In der Ferne siehst du eine Burg!")
                 print("Du gehst hinein und bist sicher.")
+                print("-----------------------------------------")
+                print("Du triffst einen Priester, der dich segnen möchte.")
+                print("1 - du lässt dich segnen")
+                print("2 - du lehnst ab")
             
-            print("Du triffst einen Priester, der dich segnen möchte.")
-            print("1 - du lässt dich segnen")
-            print("2 - du lehnst ab")
-            
-            auswahl = input("Auswahl: ")
-            
-            if auswahl == "1":
-                # segnen lassen
-                print("Du wirst gesegnet und spührst die Kraft Gottes!")
-                print("Das Abenteuer geht weiter!")
+                auswahl = input("Auswahl: ")
+
+
+                # ...
+
+                if auswahl == "1":
+                        # Segnen lassen
+                        print("Du wirst gesegnet und spürst die Kraft Gottes!")
+                        print("Das Abenteuer geht weiter!")
+
+                        print("Plötzlich taucht ein mächtiger Drache vor dir auf!")
+                        print("1 - Mit der gesegneten Waffe kämpfen")
+                        print("2 - Den Drachen um Gnade bitten")
+                        print("3 - Versuchen, davonzulaufen")
+
+                        auswahl = input("Auswahl: ")
+
+                        if auswahl == "1":
+                            # Mit der gesegneten Waffe kämpfen
+                            if "gesegnete Waffe" in inventar:
+                                print("Mit deiner gesegneten Waffe wagst du den Kampf gegen den Drachen.")
+                                # Hier kannst du den Kampf gegen den Drachen implementieren
+                            else:
+                                print("Du hast keine geeignete Waffe, um gegen den Drachen anzutreten. Du stirbst...")
+                                print("Game Over!")
+                                break
+
+                        elif auswahl == "2":
+                            # Den Drachen um Gnade bitten
+                            print("Du kniest nieder und bittest den Drachen um Gnade.")
+                            print("Der Drache scheint mitfühlend zu sein und lässt dich unversehrt weiterziehen.")
+
+                        elif auswahl == "3":
+                            # Versuchen, davonzulaufen
+                            print("Du versuchst, vor dem Drachen zu fliehen.")
+                            # Hier kannst du die Fluchtmechanik implementieren
+
+                        print("Du setzt dein Abenteuer fort und gelangst zu einem geheimnisvollen Tempel.")
+                        print("1 - Den Tempel betreten")
+                        print("2 - Den Tempel umgehen und weiterziehen")
+
+                        auswahl = input("Auswahl: ")
+
+                        if auswahl == "1":
+                            # Den Tempel betreten
+                            print("Du betrittst den Tempel und findest einen alten magischen Talisman.")
+                            print("1 - Den Talisman mitnehmen")
+                            print("2 - Den Talisman ignorieren")
+
+                            auswahl = input("Auswahl: ")
+
+                            if auswahl == "1":
+                                # Den Talisman mitnehmen
+                                print("Du nimmst den magischen Talisman an dich und spürst seine Macht.")
+                                inventar_hinzufügen(benutzer[0], "Talisman", 1)
+
+                            elif auswahl == "2":
+                                # Den Talisman ignorieren
+                                print("Du entscheidest dich, den magischen Talisman liegen zu lassen.")
+
+                        elif auswahl == "2":
+                            # Den Tempel umgehen und weiterziehen
+                            print("Du entscheidest dich, den geheimnisvollen Tempel zu umgehen und weiterzuziehen.")
                 
-            elif auswahl == "2":
-                # ablehnen
-                print("Der Priester wird wütend und ersticht dich mit einem Dolch...")
-                print("Game Over!")
-                break
+                
+                
+                
+                elif auswahl == "2":
+                    # ablehnen
+                    print("Der Priester wird wütend und ersticht dich mit einem Dolch...")
+                    print("Game Over!")
+                    break
+
