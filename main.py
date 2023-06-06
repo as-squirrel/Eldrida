@@ -2,6 +2,10 @@ import sqlite3
 import pygame 
 from pygame import mixer
 
+from colorama import init, Fore, Style
+
+init(autoreset=False)
+
 pygame.init()
 
 #Die Musik des Spieles
@@ -115,8 +119,8 @@ def errate_laengster_fluss(land, laengster_fluss):
         print("Falsch! Der längste Fluss von", land, "ist", laengster_fluss)
 
 def errate_bundesland(land, bundesland):
-    print("Errate das Bundesland!")
-    print("Land:", land)
+    print("Errate das Land!")
+    print("Bundesland:", bundesland)
 
     eingabe = input("Deine Antwort: ")
 
@@ -205,9 +209,15 @@ bundeslaender = {
 
 
 eingeloggt = False
+
+def inventar_leeren():
+    # Das Inventar der aktuellen Benutzer-ID aus der Datenbank löschen
+    c.execute('''DELETE FROM inventar WHERE benutzer_id = ?''', (benutzer[0],))
+    conn.commit()
+
 while True:
     # Hauptmenü anzeigen
-    print("Willkommen zum Textadventure!")
+    print(Fore.YELLOW + "Willkommen zum Textadventure!" + Style.RESET_ALL)
     print("1 - Registrieren")
     print("2 - Anmelden")
     print("3 - Beenden")
@@ -233,11 +243,11 @@ while True:
         break
 
     else:
-        print("Ungültige Auswahl!")
+        print(Fore.RED + "Ungültige Auswahl!" + Style.RESET_ALL)
 
     while eingeloggt:
         # Spiel-Loop
-        print("Du bist eingeloggt!")
+        print(Fore.GREEN + "Du bist eingeloggt!" + Style.RESET_ALL)
         print("1 - Inventar anzeigen")
         print("2 - Abenteuer beginnen")
         print("3 - Ausloggen")
@@ -249,17 +259,13 @@ while True:
             c.execute('''SELECT * FROM inventar WHERE benutzer_id = ?''', (benutzer[0],))
             inventar = c.fetchall()
             if inventar:
-                print("Dein Inventar:")
+                print(Fore.CYAN + "Dein Inventar:" + Style.RESET_ALL)
                 for item in inventar:
                     print(item[2], "x", item[3])
 
-                    print("")
-                    print("")
-                    print(">---------------------------------------<")
+                print(">---------------------------------------<")
             else:
-                print("Dein Inventar ist leer.")
-                print("")
-                print("")
+                print(Fore.CYAN + "Dein Inventar ist leer." + Style.RESET_ALL)
                 print(">---------------------------------------<")
 
         elif auswahl == "2":
@@ -305,7 +311,8 @@ while True:
             if auswahl == "1":
                 # Kämpfen
                 print("Der Ork verpasst dir einen Hieb mit seiner Keule und du stirbst...")
-                print("Game Over!")
+                print(Fore.RED + "Game Over!" + Style.RESET_ALL)
+                inventar_leeren()
                 break
 
             elif auswahl == "2":
@@ -316,77 +323,72 @@ while True:
                 print("Du triffst einen Priester, der dich segnen möchte.")
                 print("1 - du lässt dich segnen")
                 print("2 - du lehnst ab")
-            
+
                 auswahl = input("Auswahl: ")
 
-
-                # ...
-
                 if auswahl == "1":
-                        # Segnen lassen
-                        print("Du wirst gesegnet und spürst die Kraft Gottes!")
-                        print("Das Abenteuer geht weiter!")
+                    # Segnen lassen
+                    print("Du wirst gesegnet und spürst die Kraft Gottes!")
+                    print("Das Abenteuer geht weiter!")
 
-                        print("Plötzlich taucht ein mächtiger Drache vor dir auf!")
-                        print("1 - Mit der gesegneten Waffe kämpfen")
-                        print("2 - Den Drachen um Gnade bitten")
-                        print("3 - Versuchen, davonzulaufen")
+                    print("Plötzlich taucht ein mächtiger Drache vor dir auf!")
+                    print("1 - Mit der gesegneten Waffe kämpfen")
+                    print("2 - Den Drachen um Gnade bitten")
+                    print("3 - Versuchen, davonzulaufen")
+
+                    auswahl = input("Auswahl: ")
+
+                    if auswahl == "1":
+                        # Mit der gesegneten Waffe kämpfen
+                        if "gesegnete Waffe" in inventar:
+                            print("Mit deiner gesegneten Waffe wagst du den Kampf gegen den Drachen.")
+                            # Hier kannst du den Kampf gegen den Drachen implementieren
+                        else:
+                            print("Du hast keine geeignete Waffe, um gegen den Drachen anzutreten. Du stirbst...")
+                            print(Fore.RED + "Game Over!" + Style.RESET_ALL)
+                            inventar_leeren()
+                            break
+
+                    elif auswahl == "2":
+                        # Den Drachen um Gnade bitten
+                        print("Du kniest nieder und bittest den Drachen um Gnade.")
+                        print("Der Drache scheint mitfühlend zu sein und lässt dich unversehrt weiterziehen.")
+
+                    elif auswahl == "3":
+                        # Versuchen, davonzulaufen
+                        print("Du versuchst, vor dem Drachen zu fliehen.")
+                        # Hier kannst du die Fluchtmechanik implementieren
+
+                    print("Du setzt dein Abenteuer fort und gelangst zu einem geheimnisvollen Tempel.")
+                    print("1 - Den Tempel betreten")
+                    print("2 - Den Tempel umgehen und weiterziehen")
+
+                    auswahl = input("Auswahl: ")
+
+                    if auswahl == "1":
+                        # Den Tempel betreten
+                        print("Du betrittst den Tempel und findest einen alten magischen Talisman.")
+                        print("1 - Den Talisman mitnehmen")
+                        print("2 - Den Talisman ignorieren")
 
                         auswahl = input("Auswahl: ")
 
                         if auswahl == "1":
-                            # Mit der gesegneten Waffe kämpfen
-                            if "gesegnete Waffe" in inventar:
-                                print("Mit deiner gesegneten Waffe wagst du den Kampf gegen den Drachen.")
-                                # Hier kannst du den Kampf gegen den Drachen implementieren
-                            else:
-                                print("Du hast keine geeignete Waffe, um gegen den Drachen anzutreten. Du stirbst...")
-                                print("Game Over!")
-                                break
+                            # Den Talisman mitnehmen
+                            print("Du nimmst den magischen Talisman an dich und spürst seine Macht.")
+                            inventar_hinzufügen(benutzer[0], "Talisman", 1)
 
                         elif auswahl == "2":
-                            # Den Drachen um Gnade bitten
-                            print("Du kniest nieder und bittest den Drachen um Gnade.")
-                            print("Der Drache scheint mitfühlend zu sein und lässt dich unversehrt weiterziehen.")
+                            # Den Talisman ignorieren
+                            print("Du entscheidest dich, den magischen Talisman liegen zu lassen.")
 
-                        elif auswahl == "3":
-                            # Versuchen, davonzulaufen
-                            print("Du versuchst, vor dem Drachen zu fliehen.")
-                            # Hier kannst du die Fluchtmechanik implementieren
+                    elif auswahl == "2":
+                        # Den Tempel umgehen und weiterziehen
+                        print("Du entscheidest dich, den geheimnisvollen Tempel zu umgehen und weiterzuziehen.")
 
-                        print("Du setzt dein Abenteuer fort und gelangst zu einem geheimnisvollen Tempel.")
-                        print("1 - Den Tempel betreten")
-                        print("2 - Den Tempel umgehen und weiterziehen")
-
-                        auswahl = input("Auswahl: ")
-
-                        if auswahl == "1":
-                            # Den Tempel betreten
-                            print("Du betrittst den Tempel und findest einen alten magischen Talisman.")
-                            print("1 - Den Talisman mitnehmen")
-                            print("2 - Den Talisman ignorieren")
-
-                            auswahl = input("Auswahl: ")
-
-                            if auswahl == "1":
-                                # Den Talisman mitnehmen
-                                print("Du nimmst den magischen Talisman an dich und spürst seine Macht.")
-                                inventar_hinzufügen(benutzer[0], "Talisman", 1)
-
-                            elif auswahl == "2":
-                                # Den Talisman ignorieren
-                                print("Du entscheidest dich, den magischen Talisman liegen zu lassen.")
-
-                        elif auswahl == "2":
-                            # Den Tempel umgehen und weiterziehen
-                            print("Du entscheidest dich, den geheimnisvollen Tempel zu umgehen und weiterzuziehen.")
-                
-                
-                
-                
                 elif auswahl == "2":
                     # ablehnen
                     print("Der Priester wird wütend und ersticht dich mit einem Dolch...")
-                    print("Game Over!")
+                    print(Fore.RED + "Game Over!" + Style.RESET_ALL)
+                    inventar_leeren()
                     break
-
