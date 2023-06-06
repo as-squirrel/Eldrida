@@ -165,3 +165,30 @@ while True:
 
 
             elif auswahl == "2":
+            if auswahl == "1":
+                # Kämpfen
+                print("Der Ork verpasst dir einen Hieb mit seiner Keule und du stirbst...")
+                print("Game Over!")
+                break
+
+            elif auswahl == "2":
+                # Fliehen
+                print("In der Ferne siehst du eine Burg!")
+                print("Du gehst hinein und bist sicher.")
+            
+            print("Du triffst einen Priester, der dich segnen möchte.")
+            print("1 - du lässt dich segnen")
+            print("2 - du lehnst ab")
+            
+            auswahl = input("Auswahl: ")
+            
+            if auswahl == "1":
+                # segnen lassen
+                print("Du wirst gesegnet und spührst die Kraft Gottes!")
+                print("Das Abenteuer geht weiter!")
+                
+            elif auswahl == "2":
+                # ablehnen
+                print("Der Priester wird wütend und ersticht dich mit einem Dolch...")
+                print("Game Over!")
+                break
