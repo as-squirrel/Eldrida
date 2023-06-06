@@ -366,29 +366,57 @@ while True:
                     auswahl = input("Auswahl: ")
 
                     if auswahl == "1":
-                        # Den Tempel betreten
-                        print("Du betrittst den Tempel und findest einen alten magischen Talisman.")
-                        print("1 - Den Talisman mitnehmen")
-                        print("2 - Den Talisman ignorieren")
+                            # Den Tempel betreten
+                            print("Du betrittst den Tempel und findest eine wundersame alte Truhe.")
+                            print("Du schaust sie dir genau an und merkst, sie kann nur durch ein Rätsel geöffnet werden.")
+                            print("1 - Das Rätsel lösen")
+                            print("2 - Die Truhe ignorieren")
 
-                        auswahl = input("Auswahl: ")
+                            auswahl = input("Auswahl: ")
 
-                        if auswahl == "1":
-                            # Den Talisman mitnehmen
-                            print("Du nimmst den magischen Talisman an dich und spürst seine Macht.")
-                            inventar_hinzufügen(benutzer[0], "Talisman", 1)
+                            if auswahl == "1"
+                                # Das Rätsel lösen
+                                print("Eine mystische Stimme erklingt und stellt dir ein Rätsel.")
+                                errate_kontinent()
+
+                                    eingabe = input("Deine Antwort: ")
+
+                                    if eingabe.lower() == kontinent.lower():
+
+                                        print("Wie von Zauberhand öffnet sich die Truhe und du findest einen alten magischen Taslisman darin")
+                                        print("1 - Talisman nehmen")
+                                        print("2 - Talisman ignorieren")
+
+                                        auswahl = input("Auswahl: ")
+
+                                        if auswahl == "1"
+                                            # Den Talisman mitnehmen
+                                            print("Du nimmst den magischen Talisman an dich und spürst seine Macht.")
+                                            inventar_hinzufügen(benutzer[0], "Talisman", 1)
+
+                                        elif auswahl == "2":
+                                            # Den Talisman ignorieren
+                                            print("Du entscheidest dich, den magischen Talisman liegen zu lassen und gehst wieder aus dem Tempel.")
+                                    
+                                    else:
+                                        print("Falsch! Das Land", land, "befindet sich auf dem Kontinent", kontinent)
+                                        print("Du hast das Rätsel nicht gelöst und die Truhe bleibt verschlossen")
+                                        print("")
+                            
+                            elif auswahl == 2:
+                                # Die Truhe ignorieren
+                                print("Du ignorierst die Truhe und gehst aus dem Tempel.")
 
                         elif auswahl == "2":
-                            # Den Talisman ignorieren
-                            print("Du entscheidest dich, den magischen Talisman liegen zu lassen.")
-
-                    elif auswahl == "2":
-                        # Den Tempel umgehen und weiterziehen
-                        print("Du entscheidest dich, den geheimnisvollen Tempel zu umgehen und weiterzuziehen.")
-
+                            # Den Tempel umgehen und weiterziehen
+                            print("Du entscheidest dich, den geheimnisvollen Tempel zu umgehen und weiterzuziehen.")
+                
+                
+                
+                
                 elif auswahl == "2":
                     # ablehnen
                     print("Der Priester wird wütend und ersticht dich mit einem Dolch...")
-                    print(Fore.RED + "Game Over!" + Style.RESET_ALL)
-                    inventar_leeren()
+                    print("Game Over!")
                     break
+                
