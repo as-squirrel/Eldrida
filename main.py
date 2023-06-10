@@ -74,60 +74,63 @@ def inventar_suchen(benutzer_id, name):
         print("Inventar nicht gefunden!")
 
 # Spiel-Loop
-def errate_hauptstadt(land, hauptstadt):
+def errate_hauptstadt(land, korrekte_hauptstadt):
     print("Errate die Hauptstadt!")
     print("Land:", land)
 
     eingabe = input("Deine Antwort: ")
 
-    if eingabe.lower() == hauptstadt.lower():
+    if eingabe.lower() == korrekte_hauptstadt.lower():
         print("Richtig! Das ist die Hauptstadt von", land)
     else:
-        print("Falsch! Die richtige Hauptstadt von", land, "ist", hauptstadt)
+        print("Falsch! Die richtige Hauptstadt von", land, "ist", korrekte_hauptstadt)
 
-def errate_kontinent(land, kontinent):
+def errate_kontinent(land, korrekter_kontinent):
     print("Errate den Kontinent!")
     print("Land:", land)
 
     eingabe = input("Deine Antwort: ")
 
-    if eingabe.lower() == kontinent.lower():
-        print("Richtig! Das Land", land, "befindet sich auf dem Kontinent", kontinent)
+    if eingabe.lower() == korrekter_kontinent.lower():
+        print("Richtig! Das Land", land, "befindet sich auf dem Kontinent", korrekter_kontinent)
+        return True
     else:
-        print("Falsch! Das Land", land, "befindet sich auf dem Kontinent", kontinent)
+        print("Falsch! Das Land", land, "befindet sich auf dem Kontinent", korrekter_kontinent)
+        return False
 
-def errate_hoechste_erhebung(land, hoechste_erhebung):
+
+def errate_hoechste_erhebung(land, korrekte_hoechste_erhebung):
     print("Errate die höchste Erhebung!")
     print("Land:", land)
 
     eingabe = input("Deine Antwort: ")
 
-    if eingabe.lower() == hoechste_erhebung.lower():
-        print("Richtig! Die höchste Erhebung von", land, "ist", hoechste_erhebung)
+    if eingabe.lower() == korrekte_hoechste_erhebung.lower():
+        print("Richtig! Die höchste Erhebung von", land, "ist", korrekte_hoechste_erhebung)
     else:
-        print("Falsch! Die höchste Erhebung von", land, "ist", hoechste_erhebung)
+        print("Falsch! Die höchste Erhebung von", land, "ist", korrekte_hoechste_erhebung)
 
-def errate_laengster_fluss(land, laengster_fluss):
+def errate_laengster_fluss(land, korrekter_laengster_fluss):
     print("Errate den längsten Fluss!")
     print("Land:", land)
 
     eingabe = input("Deine Antwort: ")
 
-    if eingabe.lower() == laengster_fluss.lower():
-        print("Richtig! Der längste Fluss von", land, "ist", laengster_fluss)
+    if eingabe.lower() == korrekter_laengster_fluss.lower():
+        print("Richtig! Der längste Fluss von", land, "ist", korrekter_laengster_fluss)
     else:
-        print("Falsch! Der längste Fluss von", land, "ist", laengster_fluss)
+        print("Falsch! Der längste Fluss von", land, "ist", korrekter_laengster_fluss)
 
-def errate_bundesland(land, bundesland):
+def errate_bundesland(land, korrektes_bundesland):
     print("Errate das Land!")
-    print("Bundesland:", bundesland)
+    print("Bundesland:", korrektes_bundesland)
 
     eingabe = input("Deine Antwort: ")
 
-    if eingabe.lower() == bundesland.lower():
-        print("Richtig! Das Land", land, "hat das Bundesland", bundesland)
+    if eingabe.lower() == korrektes_bundesland.lower():
+        print("Richtig! Das Land", land, "hat das Bundesland", korrektes_bundesland)
     else:
-        print("Falsch! Das Land", land, "hat das Bundesland", bundesland)
+        print("Falsch! Das Land", land, "hat das Bundesland", korrektes_bundesland)
 
 
 
@@ -359,13 +362,13 @@ while True:
                         print("Du versuchst, vor dem Drachen zu fliehen.")
                         # Hier kannst du die Fluchtmechanik implementieren
 
-                    print("Du setzt dein Abenteuer fort und gelangst zu einem geheimnisvollen Tempel.")
-                    print("1 - Den Tempel betreten")
-                    print("2 - Den Tempel umgehen und weiterziehen")
+                        print("Du setzt dein Abenteuer fort und gelangst zu einem geheimnisvollen Tempel.")
+                        print("1 - Den Tempel betreten")
+                        print("2 - Den Tempel umgehen und weiterziehen")
 
-                    auswahl = input("Auswahl: ")
+                        auswahl = input("Auswahl: ")
 
-                    if auswahl == "1":
+                        if auswahl == "1":
                             # Den Tempel betreten
                             print("Du betrittst den Tempel und findest eine wundersame alte Truhe.")
                             print("Du schaust sie dir genau an und merkst, sie kann nur durch ein Rätsel geöffnet werden.")
@@ -374,49 +377,90 @@ while True:
 
                             auswahl = input("Auswahl: ")
 
-                            if auswahl == "1"
+                            if auswahl == "1":
                                 # Das Rätsel lösen
                                 print("Eine mystische Stimme erklingt und stellt dir ein Rätsel.")
-                                errate_kontinent()
+                                korrekter_kontinent = kontinente["Deutschland"]
+                                lösung_richtig = errate_kontinent("Deutschland", korrekter_kontinent)
 
-                                    eingabe = input("Deine Antwort: ")
+                                if lösung_richtig:
 
-                                    if eingabe.lower() == kontinent.lower():
+                                    print("Wie von Zauberhand öffnet sich die Truhe und du findest einen alten magischen Talisman darin")
+                                    print("1 - Talisman nehmen")
+                                    print("2 - Talisman ignorieren")
 
-                                        print("Wie von Zauberhand öffnet sich die Truhe und du findest einen alten magischen Taslisman darin")
-                                        print("1 - Talisman nehmen")
-                                        print("2 - Talisman ignorieren")
+                                    auswahl = input("Auswahl: ")
+
+                                    if auswahl == "1":
+                                        # Den Talisman mitnehmen
+                                        print("Du nimmst den magischen Talisman an dich und spürst seine Macht.")
+                                        inventar_hinzufügen(benutzer[0], "Talisman", 1)
+                                        
+                                        # Hier kannst du das neue Rätsel hinzufügen
+                                        print("Als du den Talisman in deinem Inventar verstaut hast, entdeckst du eine geheimnisvolle Tür im Tempel.")
+                                        print("Neben der Tür befindet sich eine Inschrift mit den Worten:")
+                                        print("Errate die höchste Erhebung von Deutschland, um die Tür zu öffnen.")
+
+                                        errate_hoechste_erhebung("Deutschland", hoechste_erhebungen["Deutschland"])
+
+                                        # Fortsetzung der Geschichte nach dem Rätsel zur höchsten Erhebung
+                                        print("Die Tür öffnet sich mit einem lauten Knarren und enthüllt einen dunklen Gang, der tiefer in den Tempel führt.")
+                                        print("Du entscheidest dich, den Gang zu erkunden und gehst vorsichtig weiter.")
+                                        print("Nach einigen Minuten erreichst du eine große Kammer, in der ein leuchtender Kristall auf einem Sockel thront.")
+                                        print("Du spürst eine starke Energie, die von dem Kristall ausgeht.")
+                                        print("1 - Den Kristall berühren")
+                                        print("2 - Den Kristall ignorieren und weitergehen")
 
                                         auswahl = input("Auswahl: ")
 
-                                        if auswahl == "1"
-                                            # Den Talisman mitnehmen
-                                            print("Du nimmst den magischen Talisman an dich und spürst seine Macht.")
-                                            inventar_hinzufügen(benutzer[0], "Talisman", 1)
+                                        if auswahl == "1":
+                                            # Den Kristall berühren
+                                            print("Als du den Kristall berührst, strömt eine magische Energie durch deinen Körper.")
+                                            print("Du fühlst dich gestärkt und erhältst neue Fähigkeiten.")
+                                            print("1 - Feuerzauber")
+                                            print("2 - Heilzauber")
 
+                                            auswahl = input("Auswahl: ")
+
+                                            if auswahl == "1":
+                                                # Feuerzauber
+                                                print("Du beherrschst nun den mächtigen Feuerzauber. Flammen entfachen sich um deine Hände.")
+                                                inventar_hinzufügen(benutzer[0], "Feuerzauber", 1)
+                                                print("Du nimmst den Feuerzauber in dein Inventar auf und fühlst dich bereit für kommende Herausforderungen.")
+                                            elif auswahl == "2":
+                                                # Heilzauber
+                                                print("Du hast nun die heilende Macht in deinen Händen. Du kannst Wunden schließen und Gesundheit wiederherstellen.")
+                                                inventar_hinzufügen(benutzer[0], "Heilzauber", 1)
+                                                print("Du nimmst den Heilzauber in dein Inventar auf und fühlst dich bereit für kommende Herausforderungen.")
+                                        
                                         elif auswahl == "2":
-                                            # Den Talisman ignorieren
-                                            print("Du entscheidest dich, den magischen Talisman liegen zu lassen und gehst wieder aus dem Tempel.")
-                                    
-                                    else:
-                                        print("Falsch! Das Land", land, "befindet sich auf dem Kontinent", kontinent)
-                                        print("Du hast das Rätsel nicht gelöst und die Truhe bleibt verschlossen")
-                                        print("")
-                            
-                            elif auswahl == 2:
+                                            # Den Kristall ignorieren
+                                            print("Du entscheidest dich, den Kristall zu ignorieren und gehst weiter durch den Tempel.")
+                                            print("Du bist gespannt, was dich noch erwartet.")
+
+                                    elif auswahl == "2":
+                                        # Den Talisman ignorieren
+                                        print("Du entscheidest dich, den magischen Talisman liegen zu lassen und gehst wieder aus dem Tempel.")
+
+                                else:
+                                    print("Du hast das Rätsel nicht gelöst und die Truhe bleibt verschlossen")
+                                    print("Du verlässt den Tempel und machst dich auf den Weg zu neuen Abenteuern.")
+
+                        elif auswahl == "2":
                                 # Die Truhe ignorieren
                                 print("Du ignorierst die Truhe und gehst aus dem Tempel.")
 
-                        elif auswahl == "2":
+                    elif auswahl == "2":
                             # Den Tempel umgehen und weiterziehen
                             print("Du entscheidest dich, den geheimnisvollen Tempel zu umgehen und weiterzuziehen.")
-                
-                
-                
-                
+                            print("Wer weiß, was dich noch auf deinem Weg erwartet.")
+
+
+
                 elif auswahl == "2":
-                    # ablehnen
+                    # Ablehnen
                     print("Der Priester wird wütend und ersticht dich mit einem Dolch...")
+                    inventar_leeren()
                     print("Game Over!")
+                    
                     break
-                
