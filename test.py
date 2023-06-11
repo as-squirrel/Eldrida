@@ -548,6 +548,8 @@ if auswahl == "1":
     print("Das Dorf erblüht wieder in alter Pracht, und die Bewohner kehren zurück. Ihr werdet als Helden gefeiert und als Dank für euren Mut und eure Tapferkeit beschenkt. Die gerettete Frau ist dankbar für eure Hilfe und schließt sich euch an, um an eurer Seite weiter Abenteuer zu erleben.")
     
     print("Gemeinsam erkundet ihr die neue Welt")
+    
+    print("Die Frau fragt dich ob du mit ihr Im dorf bleiben willst oder dir ein neues Arbenteuer suchst")
 
         
 
