@@ -459,8 +459,101 @@ while True:
 
                 elif auswahl == "2":
                     # Ablehnen
-                    print("Der Priester wird wütend und ersticht dich mit einem Dolch...")
-                    inventar_leeren()
-                    print("Game Over!")
-                    
-                    break
+                    print("Du setzt dein Abenteuer fort und gelangst zu einer tiefen Schlucht.")
+                    print("1 - Über die Schlucht springen")
+                    print("2 - Einen anderen Weg suchen")
+
+                    auswahl = input("Auswahl: ")
+
+    if auswahl == "1":
+        # Über die Schlucht springen
+        print("Du nimmst Anlauf und springst über die Schlucht.")
+        print("Es ist ein gewagter Sprung, aber du schaffst es sicher auf die andere Seite.")
+        print("Du bist erleichtert und stolz auf deine Geschicklichkeit.")
+
+    elif auswahl == "2":
+        # Einen anderen Weg suchen
+        print("Du entscheidest dich, einen anderen Weg um die Schlucht herum zu suchen.")
+        print("Nach einiger Zeit entdeckst du eine schmale Brücke, die über die Schlucht führt.")
+        print("Du gehst vorsichtig über die Brücke und erreichst sicher die andere Seite.")
+
+    print("Während deines Abenteuers kommst du an einem verlassenen Dorf vorbei.")
+    print("1 - Das Dorf erkunden")
+    print("2 - Am Dorf vorbeiziehen")
+
+    auswahl = input("Auswahl: ")
+    
+    
+    print("Neugierig entscheidest du dich, das verlassene Dorf zu erkunden.")
+print("Du betrittst die engen Gassen des Dorfes und siehst, dass die Häuser verfallen sind und von der Natur zurückerobert werden.")
+print("Es herrscht eine unheimliche Stille, die nur vom leisen Rascheln des Windes durchbrochen wird.")
+print("Während du dich durch die verlassenen Straßen bewegst, bemerkst du, dass viele der Häuser geplündert wurden und persönliche Gegenstände verstreut sind.")
+
+print("Plötzlich hörst du ein leises Weinen aus der Ferne.")
+print("Du folgst dem Klang und gelangst zu einem kleinen Haus am Ende des Dorfes.")
+print("Die Tür steht halb offen, und du hörst das Schluchzen immer lauter werden.")
+print("Du betrittst das Haus und findest eine junge Frau, die verzweifelt in einer Ecke sitzt.")
+
+print("1 - Die Frau ansprechen")
+print("2 - Das Haus verlassen")
+
+auswahl = input("Auswahl: ")
+
+if auswahl == "1":
+    # Die Frau ansprechen
+    print("Du gehst langsam auf die Frau zu und sprichst sie sanft an.")
+    print("Sie schaut auf, Tränen rinnen über ihr Gesicht.")
+    print("Sie erzählt dir, dass das Dorf von einer dunklen Macht heimgesucht wurde, die die Bewohner vertrieben hat.")
+    print("Ihre Familie wurde getrennt, und sie ist die einzige, die zurückgeblieben ist.")
+
+    print("1 - Die Frau trösten und Hilfe anbieten")
+    print("2 - Das Dorf verlassen und das Abenteuer fortsetzen")
+
+    auswahl = input("Auswahl: ")
+
+    if auswahl == "1":
+        # Die Frau trösten und Hilfe anbieten
+        print("Du setzt dich zu der Frau und nimmst ihre Hand.")
+        print("Du versicherst ihr, dass du ihr helfen wirst, ihre Familie wiederzufinden und das Dorf von der dunklen Macht zu befreien.")
+        print("Ihr Gesicht hellt sich etwas auf, und sie bedankt sich für deine Unterstützung.")
+
+        print("Gemeinsam macht ihr euch auf den Weg, das Dorf zu erkunden und Hinweise auf die vermissten Familienmitglieder zu finden.")
+        print("Ihr durchsucht die Häuser, sprecht mit den wenigen verbliebenen Dorfbewohnern und stoßt auf immer mehr Anzeichen für die Präsenz der dunklen Macht.")
+
+        print("Nach einiger Zeit entdeckt ihr einen alten, versteckten Eingang zu einer geheimen Höhle unter dem Dorf.")
+        print("Ihr entscheidet euch, hineinzugehen, in der Hoffnung, dort Antworten und vielleicht sogar eine Möglichkeit zur Befreiung des Dorfes zu finden.")
+        
+        print("Die Höhle ist düster und voller Gefahren. Ihr müsst euch an giftigen Spinnenweben vorbeischlängeln, über instabile Brücken balancieren und rätselhafte Mechanismen entschlüsseln, um weiterzukommen. Doch ihr gebt nicht auf und kämpft euch tapfer durch die Herausforderungen.")
+
+print("Schließlich erreicht ihr den tiefsten Teil der Höhle, wo ihr auf eine finstere Gestalt trefft – den Anführer der dunklen Macht, der das Dorf terrorisiert. Es kommt zu einem epischen Kampf, bei dem ihr eure neugewonnene Waffe und Fähigkeiten einsetzt, um gegen den Anführer anzutreten. Ihr kämpft verbissen, während die Höhle von eurem Kampf widerhallt.")
+
+print("Dank deiner geschärften Sinne und der mächtigen Waffe gelingt es dir, den Anführer der dunklen Macht zu bezwingen. Er verschwindet in einem dunklen Nebel, der sich langsam auflöst und die Höhle in ein warmes Licht taucht.")
+
+print("Als der Nebel verzieht, erscheint ein geheimnisvolles Portal vor euch. Es scheint eine Verbindung zu einer anderen Dimension zu sein. Du spürst eine starke Präsenz und eine unerklärliche Anziehungskraft von jenseits des Portals.")
+
+print("1 - Das Portal betreten")
+print("2 - Das Portal ignorieren und zum Dorf zurückkehren")
+
+auswahl = input("Auswahl: ")
+
+if auswahl == "1":
+    print("Du und die gerettete Frau treten gemeinsam durch das Portal und findet euch plötzlich in einer faszinierenden, aber fremden Welt wieder. Die Landschaft ist atemberaubend, mit schimmernden Wasserfällen, leuchtenden Pflanzen und exotischen Kreaturen.")
+    
+    print("Ihr erkundet diese neue Welt voller Abenteuer und Geheimnisse. Gemeinsam begebt ihr euch auf die Suche nach den vermissten Familienmitgliedern der Frau und stellt euch den Herausforderungen, die euch hier erwarten.")
+    
+    print("Im Laufe eurer Reise begegnet ihr faszinierenden Wesen und freundet euch mit einigen von ihnen an. Ihr entdeckt verborgene Schätze, die euch noch mächtiger machen, und gewinnt an Erfahrung und Weisheit.")
+    
+    print("Nach vielen aufregenden Abenteuern und harten Kämpfen gelingt es euch, die vermissten Familienmitglieder der Frau aufzuspüren und sie sicher zurückzubringen. Ihr habt euer Versprechen gehalten und das Dorf von der dunklen Macht befreit.")
+    
+    print("Das Dorf erblüht wieder in alter Pracht, und die Bewohner kehren zurück. Ihr werdet als Helden gefeiert und als Dank für euren Mut und eure Tapferkeit beschenkt. Die gerettete Frau ist dankbar für eure Hilfe und schließt sich euch an, um an eurer Seite weiter Abenteuer zu erleben.")
+    
+    print("Gemeinsam erkundet ihr die neue Welt")
+    
+    print("Die Frau fragt dich ob du mit ihr Im dorf bleiben willst oder dir ein neues Arbenteuer suchst")
+
+        
+
+        
+        
+    
+  
