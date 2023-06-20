@@ -345,7 +345,7 @@ while True:
                         # Mit der gesegneten Waffe kämpfen
                         if "gesegnete Waffe" in inventar:
                             print("Mit deiner gesegneten Waffe wagst du den Kampf gegen den Drachen.")
-                            # Hier kannst du den Kampf gegen den Drachen implementieren
+                            
                         else:
                             print("Du hast keine geeignete Waffe, um gegen den Drachen anzutreten. Du stirbst...")
                             print(Fore.RED + "Game Over!" + Style.RESET_ALL)
